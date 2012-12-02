@@ -21,13 +21,13 @@
                 // find footnotes and add their data to the `notes` array,
                 // remove original notes from text as they will be rebuilt
                 // from scratch in the next step
-                text = text.replace(/\[\^([^\]]*)\]:\s*([^]+?)(?=\n{2,})/g, function(match, id, notetext) {
+                text = text.replace(/\[\^([^\]]*)\]:\s([^\n][^]+?)(?=\n{2,})/g, function(match, id, notetext) {
                   if (id && notetext) {
                     for (var i=0, len=notes.length; i < len; i++) {
                       note = notes[i];
                       if (note.id == id) {
                         // remove indentation spaces
-                        note.text = notetext.replace(/\n(\s*)/, '');
+                        note.text = notetext.replace(/\s*?\n\s*/, ' ');
                       }
                     }
                   }
