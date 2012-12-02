@@ -1133,8 +1133,11 @@ var _DoItalicsAndBold = function(text) {
 	text = text.replace(/(\*\*|__)(?=\S)([^\r]*?\S[*_]*)\1/g,
 		"<strong>$2</strong>");
 
-	text = text.replace(/(\*|_)(?=\S)([^\r]*?\S)\1/g,
-		"<em>$2</em>");
+	text = text.replace(/(?:^|\s|$)(\*|_)(?=\S)([^\r]*?\S)\1(?!\w)/g, function(match, p1, p2) {
+    // TODO: replace this ugly hack
+	  p1 = (match[0] == ' ') ? ' ' : '';
+    return p1 + "<em>" + p2 + "</em>";
+	});
 
 	return text;
 }
