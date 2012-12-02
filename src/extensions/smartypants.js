@@ -11,7 +11,11 @@
         return [
           { type: 'output',
             filter: function(text) {
-              return typogr(text).chain().amp().smartypants().value();
+              // don't run if text is empty
+              if (text.length) {
+                text = typogr(text).chain().amp().smartypants().value();
+              }
+              return text;
             }
           }
         ];
