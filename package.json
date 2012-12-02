@@ -32,7 +32,7 @@
         "grunt-simple-mocha": "*",
         "grunt-mocha": "*",
         "should": "1.2.0",
-        "typogr": ">=0.5.1"
+        "typogr": "git://github.com/lhagan/typogr.js.git#fix-code-blocks"
     },
     "licenses": [{
         "type": "BSD",
