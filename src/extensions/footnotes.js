@@ -35,14 +35,18 @@
                 });
                 
                 // build footnotes ordered list from `notes` array
-                var notesOutput = ['<div class="footnotes">', '<hr />', '<ol>'];
-                for (var i=0, len=notes.length; i < len; i++) {
-                  note = notes[i];
-                  notesOutput.push('<li id="fn' + note.fn + '"><p>' + note.text + '<a href="#fnref' + note.fn + '">&#8617;</a></p></li>');
+                // but only if there were footnotes
+                if (notes.length) {
+                  var notesOutput = ['<div class="footnotes">', '<hr />', '<ol>'];
+                  for (var i=0, len=notes.length; i < len; i++) {
+                    note = notes[i];
+                    notesOutput.push('<li id="fn' + note.fn + '"><p>' + note.text + '<a href="#fnref' + note.fn + '">&#8617;</a></p></li>');
+                  }
+                  notesOutput.push('</ol>');
+                  notesOutput.push('</div>');
+                  text += notesOutput.join('');
                 }
-                notesOutput.push('</ol>');
-                notesOutput.push('</div>');
-                return text += notesOutput.join('');
+                return text;
               }
             }
         ];
