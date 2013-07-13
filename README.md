@@ -1,6 +1,8 @@
 # Showdown [![build status](https://secure.travis-ci.org/coreyti/showdown.png)](http://travis-ci.org/coreyti/showdown)
 
-A JavaScript port of Markdown
+A JavaScript port of Markdown, plus a number of extensions. This fork includes edits and extensions to make Showdown behave more like Pandoc. Currently, it eliminates intra-word emphasis and adds support for footnotes, LaTeX math via MathJax, and SmartyPants-like typographic punctuation courtesy of ekalinin/typogr.js.
+
+Still very rough; use at your own risk!
 
 ## Note
 
