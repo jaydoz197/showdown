@@ -81,6 +81,8 @@
             tbl.push('</table>');
             // we are done with this table and we move along
             out.push(tbl.join('\n'));
+            // https://github.com/xdamman/showdown/commit/15e0d8c71166955b35d7a6ef3df540d9fd2be983
+            tbl = [];
             continue;
           }
         }
